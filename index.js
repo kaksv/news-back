@@ -21,7 +21,11 @@ connectMongo();
 
 // app.use(cors(corsOptionsDelegate));
 
-app.use(cors());
+app.use(cors({
+    origin: ['http://localhost:5173', 'https://news-front-2csz.vercel.app/'],
+    methods: ['GET', 'POST', 'PUT', 'DELETE'],
+    allowedHeaders: ['Content-Type']
+}));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
