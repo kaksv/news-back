@@ -21,9 +21,7 @@ connectMongo();
 
 // app.use(cors(corsOptionsDelegate));
 
-app.use(cors({
-    origin: process.env.FRONT_APP_URL
-}));
+app.use(cors());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
